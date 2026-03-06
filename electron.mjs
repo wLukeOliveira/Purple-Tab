@@ -23,7 +23,7 @@ function createWindow() {
   });
 
   // Carregar o aplicativo React
-  mainWindow.loadURL('http://localhost:5175');
+  mainWindow.loadURL('http://localhost:5173');
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
