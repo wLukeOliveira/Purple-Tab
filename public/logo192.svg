@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none">
+  <defs>
+    <linearGradient id="financeGradientLarge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="48" fill="url(#financeGradientLarge)"/>
+  <path d="M48 72h96v24H48V72zm0 48h96v24H48v-24zm0 48h60v24H48v-24z" fill="white" opacity="0.9"/>
+  <path d="M120 96l-18 18V78l18 18z" fill="white" opacity="0.9"/>
+  <circle cx="60" cy="144" r="6" fill="white" opacity="0.9"/>
+  <circle cx="78" cy="144" r="6" fill="white" opacity="0.9"/>
+  <circle cx="96" cy="144" r="6" fill="white" opacity="0.9"/>
+</svg>

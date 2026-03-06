@@ -1,0 +1,310 @@
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding: 0 16px;
+}
+
+.tab {
+  position: relative;
+  background: rgba(30, 41, 59, 0.8);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 120px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.tab:hover:not(.active) {
+  background: rgba(51, 65, 85, 0.9);
+  color: #cbd5e1;
+}
+
+.tab.active {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+  color: #ffffff;
+  z-index: 1;
+  height: 36px;
+  outline: none;
+}
+
+.tab:focus {
+  outline: none;
+}
+
+.tabLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  flex: 1;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.tab.active .closeButton {
+  color: #ffffff;
+}
+
+.tab.active .closeButton:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+/* Botão de adicionar nova aba */
+.newTabContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.newTabButton {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.newTabButton:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: scale(1.05);
+}
+
+/* Menu dropdown */
+.newTabMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.menuItem {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  text-align: left;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.menuItem:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.menuItem:first-child {
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+/* Indicador de variação percentual */
+.percentageChange {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.percentageArrow {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.percentageValue {
+  font-weight: 600;
+}
+
+.percentagePeriod {
+  opacity: 0.8;
+  font-size: 11px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menuItem.createProject {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  color: #3b82f6;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.menuItem.createProject:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+  color: #2563eb;
+}
+
+.noOptions {
+  padding: 10px 16px;
+  color: #64748b;
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .tabsContainer {
+    padding: 0 8px;
+    gap: 4px;
+  }
+  
+  .tab {
+    min-width: 80px;
+    padding: 6px 12px;
+    font-size: 12px;
+    height: 32px;
+  }
+  
+  .newTabButton {
+    min-width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .newTabMenu {
+    min-width: 130px;
+  }
+  
+  .menuItem {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .percentageChange {
+    padding: 6px 10px;
+    font-size: 11px;
+    gap: 4px;
+  }
+  
+  .percentageArrow {
+    font-size: 12px;
+  }
+  
+  .percentageValue {
+    font-size: 11px;
+  }
+  
+  .percentagePeriod {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabsContainer {
+    padding: 0 4px;
+    gap: 2px;
+  }
+  
+  .tab {
+    min-width: 60px;
+    padding: 4px 8px;
+    font-size: 11px;
+    height: 28px;
+  }
+  
+  .newTabButton {
+    min-width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .newTabMenu {
+    min-width: 120px;
+  }
+  
+  .menuItem {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .percentageChange {
+    padding: 4px 8px;
+    font-size: 10px;
+    gap: 3px;
+  }
+  
+  .percentageArrow {
+    font-size: 11px;
+  }
+  
+  .percentageValue {
+    font-size: 10px;
+  }
+  
+  .percentagePeriod {
+    font-size: 9px;
+  }
+}

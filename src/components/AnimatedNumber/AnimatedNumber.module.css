@@ -1,0 +1,20 @@
+.animatedNumber {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.animatedNumber.animating {
+  color: #8b5cf6;
+  transform: scale(1.08);
+  font-weight: 600;
+}
+
+/* Para valores positivos */
+.animatedNumber.positive.animating {
+  color: #10b981;
+}
+
+/* Para valores negativos */
+.animatedNumber.negative.animating {
+  color: #ef4444;
+}

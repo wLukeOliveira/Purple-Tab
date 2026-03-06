@@ -1,0 +1,145 @@
+.dashboard {
+  display: flex;
+  gap: var(--spacing-lg);
+  height: 100%;
+  padding: var(--spacing-lg);
+  width: 100%;
+  min-width: 0;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  min-width: 0;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.actionButtons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btnPrimary:hover {
+  background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btnSecondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btnSecondary:hover {
+  background: var(--bg-secondary);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.contentSection {
+  flex: 1;
+}
+
+.sidebarContent {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  
+  .sidebarContent {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    flex-shrink: 0;
+  }
+  
+  .sidebarContent > * {
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  
+  .mainContent {
+    gap: var(--spacing-md);
+  }
+  
+  .topSection {
+    gap: var(--spacing-md);
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+  
+  .sidebarContent {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+  
+  .sidebarContent > * {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+  
+  .actionButtons {
+    gap: var(--spacing-xs);
+  }
+  
+  .btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.85rem;
+  }
+}
